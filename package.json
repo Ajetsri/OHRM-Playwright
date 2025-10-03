@@ -1,0 +1,17 @@
+{
+  "name": "ohrmplaywrightpr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "report": "npx playwright show-report",
+    "split": "node utils/splitResults.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@playwright/test": "^1.55.1"
+  }
+}

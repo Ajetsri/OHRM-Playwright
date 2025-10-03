@@ -1,0 +1,3 @@
+Valid Login Test
+Invalid Login Test - {"username":"Admin","password":"wrongpass"}
+Invalid Login Test - {"username":"WrongUser","password":"admin123"}
