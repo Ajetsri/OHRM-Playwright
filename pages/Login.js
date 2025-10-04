@@ -9,7 +9,8 @@ export class Login {
     this.loginButton = 'button[type="submit"]';
     this.errorMessage = '.oxd-alert-content-text';
     this.dashboardHeader = 'h6.oxd-topbar-header-breadcrumb-module';
-    this.UserpassworderrorMsg='//*[@class="oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message"]';
+    //this.UserpassworderrorMsg='//*[@class="oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message"]';
+    this.UserpassworderrorMsg = page.locator('xpath=//*[@class="oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message"]');
     this.lastnamedropdown='[class="oxd-dropdown-menu"]'
   }
 
@@ -29,10 +30,9 @@ export class Login {
   async ErrorMessageRequired()
   {
     await this.page.click(this.loginButton);
-    for(i=0;i<2;i++)
+    for(var i=0;i<2;i++)
       {
-        await expect(page.UserpassworderrorMsg.nth(i)).tobeVisible();
-        await expect(page.UserpassworderrorMsg.nth(i)).toContainText('Required');
+        await expect(this.UserpassworderrorMsg.nth(i)).toContainText('Required');
       }
   }
 }
