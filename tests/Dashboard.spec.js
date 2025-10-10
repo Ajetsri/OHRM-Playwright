@@ -11,7 +11,7 @@ test.beforeEach(async({page})=>{
     await dashboard.DashboardClick();
 
 });
-test('Dashboard Widgets Check', async ({ page }) => {
+test('Dashboard Widgets validation', async ({ page }) => {
   const dashboard = new Dashboard(page);
   await dashboard.Dashboardvalidation();
 });

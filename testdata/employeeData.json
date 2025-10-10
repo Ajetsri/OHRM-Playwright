@@ -1,0 +1,5 @@
+{
+  "newEmployee": { "firstName": "kavya", "lastName": "Dinn" },
+  "newUser": { "username": "kavya123", "password": "Password@123" },
+  "newCandidate": { "firstName": "Akhil", "lastName": "Sany", "email": "akhil@gmail.com" }
+}

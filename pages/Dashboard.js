@@ -32,7 +32,4 @@ export class Dashboard {
     await expect(this.widgets).toHaveCountGreaterThan(0);
     await expect(this.quickLinks).toBeVisible();
   }
-  async goto() {
-    // Dashboard is default after login
-  }
 }
