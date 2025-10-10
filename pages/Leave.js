@@ -1,24 +1,27 @@
 import { expect } from "@playwright/test";
 
-export class Leave{
+export class Leave {
   constructor(page) {
     this.page = page;
-    this.DashboardHead = page.locator('//h6[contains(@class,"oxd-topbar-header-breadcrumb-module")]');
+    this.leaveMenu = page.locator('//span[text()="Leave"]');
+    this.assignLeaveButton = page.locator('button:has-text("Assign Leave")');
+    this.employeeNameInput = page.locator('input[placeholder="Type for hints..."]');
+    this.leaveTypeSelect = page.locator('select[name="leaveType"]');
+    this.fromDateInput = page.locator('input[name="fromDate"]');
+    this.toDateInput = page.locator('input[name="toDate"]');
+    this.assignButton = page.locator('button:has-text("Assign")');
   }
 
-  async DashboardClick() {
-    await this.dbclick.click();
-    await expect(this.DashboardHead).toHaveText('Dashboard');
+  async goto() {
+    await this.leaveMenu.click();
   }
 
-  async Dashboardvalidation() {
-    await expect(this.timehead).toBeVisible();
-    await expect(this.timehead).toHaveText('Time at Work');
-    await expect(this.actionsHead).toBeVisible();
-    await expect(this.actionsHead).toHaveText('My Actions');
-    await expect(this.QuicklHead).toBeVisible();
-    await expect(this.QuicklHead).toHaveText('Quick Launch');
-    await expect(this.BuzzHd).toBeVisible();
-    await expect(this.BuzzHd).toHaveText('Buzz Latest Posts ');
+  async applyLeave(data) {
+    await this.assignLeaveButton.click();
+    await this.employeeNameInput.fill(data.employee);
+    await this.leaveTypeSelect.selectOption({ label: data.type });
+    await this.fromDateInput.fill(data.fromDate);
+    await this.toDateInput.fill(data.toDate);
+    await this.assignButton.click();
   }
 }

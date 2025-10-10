@@ -1,24 +1,23 @@
 import { expect } from "@playwright/test";
 
-export class Performance{
+export class Performance {
   constructor(page) {
     this.page = page;
-    this.DashboardHead = page.locator('//h6[contains(@class,"oxd-topbar-header-breadcrumb-module")]');
+    this.performanceMenu = page.locator('//span[text()="Performance"]');
+    this.addKPIButton = page.locator('button:has-text("Add")');
+    this.kpiNameInput = page.locator('input[name="kpiName"]');
+    this.kpiTargetInput = page.locator('input[name="kpiTarget"]');
+    this.saveButton = page.locator('button:has-text("Save")');
   }
 
-  async DashboardClick() {
-    await this.dbclick.click();
-    await expect(this.DashboardHead).toHaveText('Dashboard');
+  async goto() {
+    await this.performanceMenu.click();
   }
 
-  async Dashboardvalidation() {
-    await expect(this.timehead).toBeVisible();
-    await expect(this.timehead).toHaveText('Time at Work');
-    await expect(this.actionsHead).toBeVisible();
-    await expect(this.actionsHead).toHaveText('My Actions');
-    await expect(this.QuicklHead).toBeVisible();
-    await expect(this.QuicklHead).toHaveText('Quick Launch');
-    await expect(this.BuzzHd).toBeVisible();
-    await expect(this.BuzzHd).toHaveText('Buzz Latest Posts ');
+  async setKPI(data) {
+    await this.addKPIButton.click();
+    await this.kpiNameInput.fill(data.name);
+    await this.kpiTargetInput.fill(data.target);
+    await this.saveButton.click();
   }
 }

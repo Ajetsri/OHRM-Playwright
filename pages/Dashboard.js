@@ -9,6 +9,8 @@ export class Dashboard {
     this.actionsHead = page.locator("//p[normalize-space(.)='My Actions']");
     this.QuicklHead = page.locator("//p[normalize-space(.)='Quick Launch']");
     this.BuzzHd = page.locator("//p[normalize-space(.)='Buzz Latest Posts']");
+    this.widgets = page.locator('.oxd-dashboard-widget');
+    this.quickLinks = page.locator('.quick-launch');
   }
 
   async DashboardClick() {
@@ -25,5 +27,12 @@ export class Dashboard {
     await expect(this.QuicklHead).toHaveText('Quick Launch');
     await expect(this.BuzzHd).toBeVisible();
     await expect(this.BuzzHd).toHaveText('Buzz Latest Posts ');
+  }
+  async validateWidgets() {
+    await expect(this.widgets).toHaveCountGreaterThan(0);
+    await expect(this.quickLinks).toBeVisible();
+  }
+  async goto() {
+    // Dashboard is default after login
   }
 }
