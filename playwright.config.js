@@ -30,6 +30,9 @@ export default defineConfig({
     trace: 'retain-on-failure',
     baseURL: 'https://opensource-demo.orangehrmlive.com/',
   },
+  launchOptions: {
+      slowMo: 2000, 
+    },
   outputDir: 'artifacts/',
 });
 
