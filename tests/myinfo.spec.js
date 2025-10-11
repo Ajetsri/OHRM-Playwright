@@ -12,5 +12,5 @@ test.beforeEach(async ({ page }) => {
 test('Update Personal Details', async ({ page }) => {
   const myInfo = new MyInfo(page);
   await myInfo.goto();
-  await myInfo.updateDetails({ firstName: 'John', lastName: 'Doe' });
+  await myInfo.updateDetails({ firstName: 'Akhil', lastName: 'Sany' });
 });
