@@ -4,7 +4,7 @@ import { Dashboard } from '../pages/Dashboard.js';
 import loginData from '../testdata/loginData.json' assert { type: "json" };
 //import { injectAxe, checkA11y } from 'axe-playwright';
 
-test.describe('Performance, Accessibility, Security', () => {
+test.describe('Performance, Security', () => {
 
   test.beforeEach(async ({ page }) => {
     const loginPage = new Login(page);
