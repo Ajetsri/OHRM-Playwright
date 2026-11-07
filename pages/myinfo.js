@@ -6,7 +6,7 @@ export class MyInfo {
     this.myInfoMenu = page.locator('//span[text()="My Info"]');
     this.firstNameInput = page.locator('input[name="firstName"]');
     this.lastNameInput = page.locator('input[name="lastName"]');
-    this.saveButton = page.locator('button:has-text("Save")');
+    this.saveButton = page.getByRole('button',{name: "Save"});
   }
 
   async goto() {
