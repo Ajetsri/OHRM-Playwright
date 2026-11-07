@@ -1,5 +1,5 @@
 import { test } from '@playwright/test';
-import { Recruitment } from '../pages/Recruitment.js';
+import { Recruitment } from '../pages/recruitment.js';
 import employeeData from '../testdata/employeeData.json';
 import { Login } from '../pages/Login.js';
 import loginData from '../testdata/loginData.json' assert { type: "json" };
